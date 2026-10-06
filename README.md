@@ -4,23 +4,6 @@ Trabalho da disciplina — Solicitação de Mudança #1 (autenticação, tela pr
 
 Integrantes: ver [alunos.md](alunos.md).
 
-## Como executar
-
-Requer JDK 21 ou superior.
-
-Com Maven:
-
-```
-mvn compile exec:java
-```
-
-Sem Maven:
-
-```
-sh build.sh
-java -jar target/poc-delivery-1.0.0.jar
-```
-
 ## Testes
 
 Os cenários de aceite das histórias US17 a US20 estão em `src/test/java/supermercado`, um arquivo por história (`US17AutenticarUsuarioTest`, `US18TelaPrincipalTest`, `US19ManterClientesTest`, `US20ManterUsuariosTest`). Cada teste tem o nome do cenário correspondente no documento.
