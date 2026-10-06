@@ -13,11 +13,14 @@ public class LoginPresenter {
     private final LoginView view;
     private final AutenticacaoService autenticacaoService;
     private final Consumer<Usuario> aoAutenticar;
+    private final Runnable encerrarAplicacao;
 
-    public LoginPresenter(LoginView view, AutenticacaoService autenticacaoService, Consumer<Usuario> aoAutenticar) {
+    public LoginPresenter(LoginView view, AutenticacaoService autenticacaoService, Consumer<Usuario> aoAutenticar,
+            Runnable encerrarAplicacao) {
         this.view = Objects.requireNonNull(view);
         this.autenticacaoService = Objects.requireNonNull(autenticacaoService);
         this.aoAutenticar = Objects.requireNonNull(aoAutenticar);
+        this.encerrarAplicacao = Objects.requireNonNull(encerrarAplicacao);
 
         view.setAcaoEntrar(this::entrar);
         view.setAcaoFechar(this::fechar);
@@ -43,6 +46,6 @@ public class LoginPresenter {
 
     private void fechar() {
         view.fechar();
-        System.exit(0);
+        encerrarAplicacao.run();
     }
 }

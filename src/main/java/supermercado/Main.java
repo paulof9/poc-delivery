@@ -83,7 +83,8 @@ public final class Main {
     }
 
     private void abrirLogin() {
-        new LoginPresenter(new LoginFrame(), autenticacaoService, this::abrirPrincipal).iniciar();
+        new LoginPresenter(new LoginFrame(), autenticacaoService, this::abrirPrincipal, () -> System.exit(0))
+                .iniciar();
     }
 
     private void abrirPrincipal(Usuario usuario) {

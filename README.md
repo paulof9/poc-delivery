@@ -21,6 +21,16 @@ sh build.sh
 java -jar target/poc-delivery-1.0.0.jar
 ```
 
+## Testes
+
+Os cenários de aceite das histórias US17 a US20 estão em `src/test/java/supermercado`, um arquivo por história (`US17AutenticarUsuarioTest`, `US18TelaPrincipalTest`, `US19ManterClientesTest`, `US20ManterUsuariosTest`). Cada teste tem o nome do cenário correspondente no documento.
+
+```
+mvn test
+```
+
+Os testes que verificam a estrutura das janelas (centralização, menus, janela maximizada) precisam de ambiente gráfico e são ignorados quando executados em modo headless.
+
 ## Usuários para teste
 
 | Usuário    | Senha       | Perfil        | Situação     |
